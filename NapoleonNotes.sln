@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NapoleonNotes", "NapoleonNotes\NapoleonNotes.csproj", "{84CFBFA5-F7F1-4534-9B54-52202106F0A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NapoleonNotes.DAL", "NapoleonNotes.DAL\NapoleonNotes.DAL.csproj", "{EEE5CDAB-80A7-4D89-B413-9F6FD68F6D10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{84CFBFA5-F7F1-4534-9B54-52202106F0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84CFBFA5-F7F1-4534-9B54-52202106F0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84CFBFA5-F7F1-4534-9B54-52202106F0A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE5CDAB-80A7-4D89-B413-9F6FD68F6D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE5CDAB-80A7-4D89-B413-9F6FD68F6D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE5CDAB-80A7-4D89-B413-9F6FD68F6D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE5CDAB-80A7-4D89-B413-9F6FD68F6D10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
