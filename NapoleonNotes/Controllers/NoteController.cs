@@ -19,6 +19,7 @@ namespace NapoleonNotes.Controllers
         public NoteController(INoteRepository repo, IMapper mapper)
         {
             _notes = repo;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -45,6 +46,7 @@ namespace NapoleonNotes.Controllers
             try
             {
                 var note = _notes.Get(model.Id);
+                if (note == null) return NotFound();
                 _mapper.Map(model, note);
                 _notes.Edit(note);
                 var data = _mapper.Map<NoteModel>(note);

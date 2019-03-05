@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace NapoleonNotes.Models
 {
     public class DeleteNoteModel
     {
-        [Required]
+        [Required, BindRequired]
         public Guid Id { get; set; }
     }
 }
