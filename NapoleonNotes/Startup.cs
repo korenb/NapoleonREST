@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using AutoMapper;
 using NapoleonNotes.Filters;
+using NapoleonNotes.DAL;
 
 namespace NapoleonNotes
 {
@@ -19,6 +20,7 @@ namespace NapoleonNotes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper();
+            services.AddSingleton<INoteRepository, NoteRepository>();
             services
                 .AddMvc(options=>
                 {
@@ -27,8 +29,22 @@ namespace NapoleonNotes
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
         
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, INoteRepository notes)
         {
+            // seeding some notes
+            notes.Create(new Note
+            {
+                CreatedAt = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromMinutes(20)),
+                Title = "Джеймс",
+                Text = "Бакстер"
+            });
+            notes.Create(new Note
+            {
+                CreatedAt = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromMinutes(120)),
+                Title = "Заметка из прошлого",
+                Text = "Кто меня создал?"
+            });
+
             app.UseMvc();
         }
     }
