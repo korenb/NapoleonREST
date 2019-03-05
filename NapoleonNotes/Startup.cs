@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using AutoMapper;
+using NapoleonNotes.Filters;
 
 namespace NapoleonNotes
 {
@@ -18,7 +19,12 @@ namespace NapoleonNotes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services
+                .AddMvc(options=>
+                {
+                    options.Filters.Add<InvalidModelResponseFilter>();
+                })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
         
         public void Configure(IApplicationBuilder app)
