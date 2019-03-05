@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using AutoMapper;
 
 namespace NapoleonNotes
 {
@@ -16,6 +17,7 @@ namespace NapoleonNotes
     {        
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
         
