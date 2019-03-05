@@ -21,6 +21,8 @@ namespace NapoleonNotes
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                // тут конечно лучше использовать переменную окружения ASPNETCORE_URLS 
+                .UseUrls("http://0.0.0.0:8080") 
                 .ConfigureAppConfiguration(cfgBuilder =>
                 {
                     cfgBuilder.SetBasePath(Directory.GetCurrentDirectory());
