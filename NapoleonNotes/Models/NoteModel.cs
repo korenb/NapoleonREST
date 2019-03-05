@@ -11,6 +11,6 @@ namespace NapoleonNotes.Models
         public string Title { get; set; }
         public string Text { get; set; }
         public DateTimeOffset DateCreate { get; set; }
-        public DateTimeOffset DateUpdate { get; set; }
+        public DateTimeOffset? DateUpdate { get; set; }
     }
 }

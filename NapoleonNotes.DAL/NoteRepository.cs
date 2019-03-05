@@ -35,6 +35,7 @@ namespace NapoleonNotes.DAL
         /// Удалить заметку
         /// </summary>
         /// <param name="guid">идентификатор</param>
+        /// <exception cref="NotFoundException"></exception>
         void Remove(Guid guid);
         /// <summary>
         /// Удалить заметку
